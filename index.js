@@ -20,5 +20,43 @@
 //WHEN I decide to finish building my team
 //THEN I exit the application, and the HTML is generated
 
-let inquirer = require ('inquirer'); 
-inquirer.prompt
+const manager = require("./lib/manager");
+const engineer = require("./lib/engineer");
+const intern = require("./lib/intern");
+const inquirer = require("inquirer");
+const path = require("path");
+const fs= require('fs');
+const output=path.resolve(__dirname,'output');
+const outputpath=path.join(output,'teamprofile.html');
+const render=require('./lib/htmlRenderer');
+
+
+const teamMember=[];
+function app () {
+    function getManger () {
+        inquirer.prompt([
+            {
+                type:'input',
+                name:'managerName',
+                message:'What is your manager name?'
+            },
+            {
+                type:'input',
+                name:'mangerID',
+                message:'what is your manager id?'
+            }
+            {
+                type:'input',
+                name:'manager email',
+                message:'What is your manager email?'
+            }
+            {
+                type:'input',
+                name:'officeNumber',
+                message:'office number for manager?'
+            }
+        ]).then (response =>{
+            
+        })
+    }
+}
